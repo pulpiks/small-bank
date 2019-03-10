@@ -1,5 +1,5 @@
 {
-    "name": "yak-server",
+    "name": "server",
     "version": "1.0.0",
     "description": "Server part",
     "main": "index.js",
@@ -14,7 +14,6 @@
         "compile": "tsc",
         "develop": "yarn compile --watch",
         "startDevelop": "nodemon --delay 0.25 --ext js --watch dist/ dist/index",
-        "seed": "node ./dist/seed/index.js",
         "test": "jest"
     },
     "lint-staged": {

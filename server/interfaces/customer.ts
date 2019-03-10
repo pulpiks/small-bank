@@ -25,5 +25,3 @@ export interface CreateCustomerPayload {
 }
 
 export const CustomersSchema = array().items(CustomerSchema)
-
-// export type YakSequelize = SequelizeFields<Yak>
