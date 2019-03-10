@@ -1,0 +1,48 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "lib": [
+        "es2017.object",
+        "dom",
+      ],
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "noImplicitAny": false,
+      "module": "commonjs",
+      "alwaysStrict": true,
+      "moduleResolution": "node",
+      "target": "es6",
+      "experimentalDecorators": true,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "allowJs": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+    },
+    "include": [
+      "**/*.ts", "./node_modules/lodash-es/**/*"
+    ],
+    "paths": {
+        "lodash/*": [
+          "node_modules/@types/lodash-es/*"
+        ],
+    },
+    "formatCodeOptions": {
+      "indentSize": 4,
+      "tabSize": 4,
+      "newLineCharacter": "\r\n",
+      "convertTabsToSpaces": true,
+      "insertSpaceAfterCommaDelimiter": true,
+      "insertSpaceAfterSemicolonInForStatements": true,
+      "insertSpaceBeforeAndAfterBinaryOperators": true,
+      "insertSpaceAfterKeywordsInControlFlowStatements": true,
+      "insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+      "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+      "placeOpenBraceOnNewLineForFunctions": false,
+      "placeOpenBraceOnNewLineForControlBlocks": false
+    },
+    "exclude": ["node_modules", "**/tests/*"]
+  }

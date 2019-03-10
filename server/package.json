@@ -1,0 +1,67 @@
+{
+    "name": "yak-server",
+    "version": "1.0.0",
+    "description": "Server part",
+    "main": "index.js",
+    "author": "pulpiks",
+    "license": "MIT",
+    "scripts": {
+        "server": "npx ts-node ./index.ts",
+        "lint:ts": "tslint --exclude '**/node_modules/**/*.ts?(x)' --config ./tslint.json --fix --format stylish '**/*.ts?(x)'",
+        "watch": "webpack --watch",
+        "run-server": "nodemon  --exec ./node_modules/.bin/ts-node -- ./index.ts",
+        "watch-ts": "tsc -w",
+        "compile": "tsc",
+        "develop": "yarn compile --watch",
+        "startDevelop": "nodemon --delay 0.25 --ext js --watch dist/ dist/index",
+        "seed": "node ./dist/seed/index.js",
+        "test": "jest"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "yarn lint:ts"
+        ]
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.6",
+        "@types/joi": "^14.3.2",
+        "@types/koa": "^2.0.48",
+        "@types/koa-router": "^7.0.39",
+        "@types/koa2-cors": "^2.0.1",
+        "@types/lodash-es": "^4.17.2",
+        "@types/node-fetch": "^2.1.6",
+        "@types/pouchdb": "^6.3.3",
+        "@types/ramda": "^0.26.1",
+        "axios": "^0.18.0",
+        "jest": "^24.1.0",
+        "ts-jest": "^24.0.0"
+    },
+    "dependencies": {
+        "@babel/core": "^7.3.3",
+        "@babel/plugin-proposal-class-properties": "^7.3.3",
+        "@babel/plugin-proposal-decorators": "^7.3.0",
+        "@babel/plugin-proposal-function-bind": "^7.2.0",
+        "@babel/polyfill": "^7.2.5",
+        "@babel/register": "^7.0.0",
+        "@types/lodash.get": "^4.4.5",
+        "@types/uuid": "^3.4.4",
+        "babel-loader": "^8.0.5",
+        "clean-webpack-plugin": "^1.0.1",
+        "dotenv-webpack": "^1.7.0",
+        "joi": "^14.3.1",
+        "koa-body": "^4.0.8",
+        "koa-router": "^7.4.0",
+        "koa2-cors": "^2.0.6",
+        "lodash-es": "^4.17.11",
+        "lodash.get": "^4.4.2",
+        "nodemon": "^1.18.10",
+        "pouchdb": "^7.0.0",
+        "pouchdb-model": "^0.4.0",
+        "ramda": "^0.26.1",
+        "ts-loader": "^5.3.3",
+        "ts-node": "^8.0.2",
+        "typescript": "^3.3.3333",
+        "uuid": "^3.3.2",
+        "webpack": "^4.29.5"
+    }
+}
