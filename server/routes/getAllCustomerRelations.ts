@@ -22,7 +22,9 @@ export const getAllCustomerRelations = async (ctx: Context, next) => {
         const values = validate(data, GetAllCustomerRelationsSchema)
         const {customerID} = values
         const result = getCustomerRelations(customerID)    
-        console.log(result)
+        if (!result) {
+            throw new Error('no customer with current id')
+        }
         ctx.status = 200
         ctx.body = result
     }
