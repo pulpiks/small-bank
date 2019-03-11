@@ -6,7 +6,8 @@ Run frontend:
 Run backend:
 - yarn develop - run tsc in watch mode
 - yarn startDevelop - run server
-- yarn test  - run tests
+- yarn test  - run unit-tests for services and API
+- yarn test-api - run tests for API
 
 
 Endpoints: 
