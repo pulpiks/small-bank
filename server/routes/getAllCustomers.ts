@@ -21,7 +21,6 @@ export const GetAllCustomerRelationsSchema = object({
 
 export const readAllCustomers = async (ctx: Context, next) => {
     const result = getAllCustomers()    
-    console.log(result)
     ctx.status = 200
     ctx.body = result
 }

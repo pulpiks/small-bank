@@ -25,16 +25,13 @@ export const CreateCustomersSchema = array().items(object({
 export const addCustomers = async (ctx: Context, next) => {
     try {
         const data: RequestCustomersType = ctx.request.body
-        console.log(data.length)
-        // validate(data, CreateCustomersSchema)
+        validate(data, CreateCustomersSchema)
         const res = bulkCreateCustomers(data)
-        console.log(res)    
         ctx.status = 200
         ctx.body = 'ok'
     }
     catch (e) {
-        console.log(e)
-        ctx.status = 500
+        ctx.status = 400
         ctx.body = {
             error: e.message 
         }

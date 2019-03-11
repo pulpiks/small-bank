@@ -3,7 +3,7 @@ import {Context} from 'koa';
 import { object, number, string } from 'joi';
 
 import { validate } from '../utils/validate';
-import { getCustomerRelations } from '../store';
+import { getCustomerRelations, getAllCustomers } from '../store';
 
 
 interface Payload {
@@ -18,7 +18,6 @@ export const GetAllCustomerRelationsSchema = object({
 export const getAllCustomerRelations = async (ctx: Context, next) => {
     try {
         const data: Payload = ctx.params
-        console.log(data)
         const values = validate(data, GetAllCustomerRelationsSchema)
         const {customerID} = values
         const result = getCustomerRelations(customerID)    
@@ -29,7 +28,7 @@ export const getAllCustomerRelations = async (ctx: Context, next) => {
         ctx.body = result
     }
     catch (e) {
-        ctx.status = 500
+        ctx.status = 404
         ctx.body = {
             error: e.message 
         }

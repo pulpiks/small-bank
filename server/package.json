@@ -14,7 +14,8 @@
         "compile": "tsc",
         "develop": "yarn compile --watch",
         "startDevelop": "nodemon --delay 0.25 --ext js --watch dist/ dist/index",
-        "test": "jest"
+        "test": "jest",
+        "test-api": "jest ./server/tests/api.test.ts"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
@@ -31,8 +32,10 @@
         "@types/node-fetch": "^2.1.6",
         "@types/pouchdb": "^6.3.3",
         "@types/ramda": "^0.26.1",
+        "@types/supertest": "^2.0.7",
         "axios": "^0.18.0",
         "jest": "^24.1.0",
+        "supertest": "^4.0.0",
         "ts-jest": "^24.0.0"
     },
     "dependencies": {

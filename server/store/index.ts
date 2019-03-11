@@ -19,7 +19,6 @@ export const createCustomer = (payload: CreateCustomerPayload): Customer => {
 }
 
 export const bulkCreateCustomers = (payload: RequestCustomersType) => {
-    console.log(payload)
     return payload.map((newCustomer) => createCustomer(newCustomer))
 }
 
